@@ -43,7 +43,7 @@
         </nav>
     </header>
     <main>
-        
+
         <div class="contenedor-bus">
             <!--div buscador-->
             <input type="text" placeholder="Ingrese instrumento a buscar">
@@ -59,13 +59,13 @@
                     <h2>Producto Ejemplo</h2>
                     <p>Esta es una breve descripción del producto que estás viendo.</p>
                     <div class="price">$49.99</div>
-            
+
                     <div class="quantity-control">
                         <button onclick="decreaseQuantity()">-</button>
                         <div class="quantity-display" id="quantity">1</div>
                         <button onclick="increaseQuantity()">+</button>
                     </div>
-            
+
                     <button class="add-to-cart">Añadir al carrito</button>
                 </div>
             </div>
@@ -75,13 +75,13 @@
                     <h2>Producto Ejemplo</h2>
                     <p>Esta es una breve descripción del producto que estás viendo.</p>
                     <div class="price">$49.99</div>
-            
+
                     <div class="quantity-control">
                         <button onclick="decreaseQuantity()">-</button>
                         <div class="quantity-display" id="quantity">1</div>
                         <button onclick="increaseQuantity()">+</button>
                     </div>
-            
+
                     <button class="add-to-cart">Añadir al carrito</button>
                 </div>
             </div>
@@ -91,13 +91,13 @@
                     <h2>Producto Ejemplo</h2>
                     <p>Esta es una breve descripción del producto que estás viendo.</p>
                     <div class="price">$49.99</div>
-            
+
                     <div class="quantity-control">
                         <button onclick="decreaseQuantity()">-</button>
                         <div class="quantity-display" id="quantity">1</div>
                         <button onclick="increaseQuantity()">+</button>
                     </div>
-            
+
                     <button class="add-to-cart">Añadir al carrito</button>
                 </div>
             </div>
@@ -107,13 +107,13 @@
                     <h2>Producto Ejemplo</h2>
                     <p>Esta es una breve descripción del producto que estás viendo.</p>
                     <div class="price">$49.99</div>
-            
+
                     <div class="quantity-control">
                         <button onclick="decreaseQuantity()">-</button>
                         <div class="quantity-display" id="quantity">1</div>
                         <button onclick="increaseQuantity()">+</button>
                     </div>
-            
+
                     <button class="add-to-cart">Añadir al carrito</button>
                 </div>
             </div>
@@ -123,13 +123,13 @@
                     <h2>Producto Ejemplo</h2>
                     <p>Esta es una breve descripción del producto que estás viendo.</p>
                     <div class="price">$49.99</div>
-            
+
                     <div class="quantity-control">
                         <button onclick="decreaseQuantity()">-</button>
                         <div class="quantity-display" id="quantity">1</div>
                         <button onclick="increaseQuantity()">+</button>
                     </div>
-            
+
                     <button class="add-to-cart">Añadir al carrito</button>
                 </div>
             </div>
@@ -143,12 +143,30 @@
         </button>
     </main>
     <footer>
-      <a href=""><img class="img-icon" src="./assets/facebook.png" alt=""></a>
-      <a href=""><img class="img-icon" src="./assets/instagram.png" alt=""></a>
-      <a href=""><img class="img-icon" src="./assets/whatsapp.png" alt=""></a>
+        <a href=""><img class="img-icon" src="./assets/facebook.png" alt=""></a>
+        <a href=""><img class="img-icon" src="./assets/instagram.png" alt=""></a>
+        <a href=""><img class="img-icon" src="./assets/whatsapp.png" alt=""></a>
     </footer>
 
-    <script src="./script.js"></script>
+    <script>
+        // cambiar fondo
+        const colorDeFondo = prompt("Elige un color de fondo");
+
+        document.body.style.backgroundColor = colorDeFondo;
+
+        const datoDeTuPeso = prompt("Ingresa tu peso:");
+
+        const resultado = (datoDeTuPeso / 9.81) * 1.66;
+        alert("Tu peso en la luna es " + resultado + "kg");
+
+        if (confirm("¿Estás seguro de que quieres continuar?")) {
+           
+            console.log("El usuario confirmó la acción.");
+        } else {
+            
+            console.log("El usuario canceló la acción.");
+        }
+    </script>
 </body>
 
 </html>
