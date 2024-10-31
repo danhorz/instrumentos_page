@@ -44,97 +44,10 @@
     </header>
     <main>
 
-        <div class="contenedor-bus">
-            <!--div buscador-->
-            <input type="text" placeholder="Ingrese instrumento a buscar">
-            <button class="btn-buscar">BUSCAR</button>
-
-        </div>
-
-        <!--Ofertas-->
         <section>
-            <div class="card">
-                <img src="./assets/electric_guitar_orange_icon-icons.com_52673.png" alt="Producto">
-                <div class="card-content">
-                    <h2>Producto Ejemplo</h2>
-                    <p>Esta es una breve descripción del producto que estás viendo.</p>
-                    <div class="price">$49.99</div>
-
-                    <div class="quantity-control">
-                        <button onclick="decreaseQuantity()">-</button>
-                        <div class="quantity-display" id="quantity">1</div>
-                        <button onclick="increaseQuantity()">+</button>
-                    </div>
-
-                    <button class="add-to-cart">Añadir al carrito</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./assets/electric_guitar_orange_icon-icons.com_52673.png" alt="Producto">
-                <div class="card-content">
-                    <h2>Producto Ejemplo</h2>
-                    <p>Esta es una breve descripción del producto que estás viendo.</p>
-                    <div class="price">$49.99</div>
-
-                    <div class="quantity-control">
-                        <button onclick="decreaseQuantity()">-</button>
-                        <div class="quantity-display" id="quantity">1</div>
-                        <button onclick="increaseQuantity()">+</button>
-                    </div>
-
-                    <button class="add-to-cart">Añadir al carrito</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./assets/electric_guitar_orange_icon-icons.com_52673.png" alt="Producto">
-                <div class="card-content">
-                    <h2>Producto Ejemplo</h2>
-                    <p>Esta es una breve descripción del producto que estás viendo.</p>
-                    <div class="price">$49.99</div>
-
-                    <div class="quantity-control">
-                        <button onclick="decreaseQuantity()">-</button>
-                        <div class="quantity-display" id="quantity">1</div>
-                        <button onclick="increaseQuantity()">+</button>
-                    </div>
-
-                    <button class="add-to-cart">Añadir al carrito</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./assets/electric_guitar_orange_icon-icons.com_52673.png" alt="Producto">
-                <div class="card-content">
-                    <h2>Producto Ejemplo</h2>
-                    <p>Esta es una breve descripción del producto que estás viendo.</p>
-                    <div class="price">$49.99</div>
-
-                    <div class="quantity-control">
-                        <button onclick="decreaseQuantity()">-</button>
-                        <div class="quantity-display" id="quantity">1</div>
-                        <button onclick="increaseQuantity()">+</button>
-                    </div>
-
-                    <button class="add-to-cart">Añadir al carrito</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./assets/electric_guitar_orange_icon-icons.com_52673.png" alt="Producto">
-                <div class="card-content">
-                    <h2>Producto Ejemplo</h2>
-                    <p>Esta es una breve descripción del producto que estás viendo.</p>
-                    <div class="price">$49.99</div>
-
-                    <div class="quantity-control">
-                        <button onclick="decreaseQuantity()">-</button>
-                        <div class="quantity-display" id="quantity">1</div>
-                        <button onclick="increaseQuantity()">+</button>
-                    </div>
-
-                    <button class="add-to-cart">Añadir al carrito</button>
-                </div>
-            </div>
-
+            <a href="./interactivo.html">Quiero interactuar</a>
         </section>
+        
 
 
         <!--Boton flotante-->
@@ -148,24 +61,8 @@
         <a href=""><img class="img-icon" src="./assets/whatsapp.png" alt=""></a>
     </footer>
 
-    <script>
-        // cambiar fondo
-        const colorDeFondo = prompt("Elige un color de fondo");
+    <script src="./app.js">
 
-        document.body.style.backgroundColor = colorDeFondo;
-
-        const datoDeTuPeso = prompt("Ingresa tu peso:");
-
-        const resultado = (datoDeTuPeso / 9.81) * 1.66;
-        alert("Tu peso en la luna es " + resultado + "kg");
-
-        if (confirm("¿Estás seguro de que quieres continuar?")) {
-           
-            alert("El usuario confirmó la acción.");
-        } else {
-            
-            alert("El usuario canceló la acción.");
-        }
     </script>
 </body>
 
