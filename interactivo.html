@@ -5,13 +5,288 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./interactivoStyle.css">
 </head>
 
 <body>
-    <h1>Web interactiva</h1>
-    <button onclick="registroDeHermanos()">Juego 1</button>
-    <button onclick="generarCuadrados()">juego 2</button>
-    <button onclick="generadorDeFiugrasDeManos()">juego 3</button>
+    <header>
+        <h1>WEB INTERACTIVA</h1>
+    </header>
+    <main>
+        <div class="contenedor-botones">
+            <button class="btn" onclick="registroDeHermanos()">Juego 1</button>
+            <button class="btn" onclick="generarCuadrados()">juego 2</button>
+            <button class="btn" onclick="generadorDeFiugrasDeManos()">juego 3</button>
+
+            <button class="btn" onclick="ej1()">juego 4</button>
+
+            <button class="btn" onclick="ej2()">juego 5</button>
+
+            <button class="btn" onclick="ej3()">juego 6</button>
+
+            <button class="btn" onclick="eje4()">juego 7</button>
+        </div>
+        <h1 class="h1">CÓDIGO Y ALGORITMO</h1>
+        <div class="contenedor-codigo">
+            <h2>Juego 1</h2>
+            <p>
+                Hermanos:
+                El programa pedirá al usuario que ingrese la cantidad de hermanos. Este número determinará el límite de
+                intentos.
+                A continuación, tienes tantos intentos como el número que hayas indicado(Usa el bucle while).
+                El programa te pedirá que ingreses los nombres de cada uno de tus hermanos, uno por uno, y los agregará
+                en un arreglo.
+                Al finalizar, usando console.log() el programa mostrará el arreglo con todos los nombres de los hermanos
+                que hayas ingresado.
+            </p>
+            <section>
+               
+                <div class="code-container">
+                    <pre><button class="copy-button">Copy</button>
+                        <code>
+                            //Eje1
+                            function registroDeHermanos()
+                            {
+                                const cantidadDeHermanos=prompt("Ingrese la cantidad de hermanos:")
+
+                                const listaHermanos=[];
+                                let contador=0;
+                                while(cantidadDeHermanos>contador)
+                                {                               let nombreDeHermano= prompt("Ingresa el hermano"+contador);
+                                    listaHermanos.push(nombreDeHermano);
+                                    contador++;
+                                }   
+                                for(list of listaHermanos)
+                                {
+                                    console.log(list);
+                                }
+                            }</code></pre>
+
+            </section>
+
+            <h2>Juego 2</h2>
+            <p>
+            Bloques:
+            El programa pedirá al usuario que ingrese un número que determine cuántos bloques (elementos &lt;div&gt; con width:100px y height:100px) se generarán en la página.
+            Cada bloque &lt;div&gt; tendrá un color de fondo calculado al azar. Para esto, debes pedirle a la IA que te ayude a escribir una función que genera colores hexadecimales al azar.
+            Al finalizar, el usuario deberá ver que en su interface, han aparecido tantos bloques como indicó.
+            </p>
+            <section>
+               
+                <div class="code-container">
+                    <pre><button class="copy-button">Copy</button>
+                        <code>
+                            //Eje2
+
+                            function colorAleatorioHex() {
+                                let caracteres = "0123456789ABCDEF";
+                                let color = "#";
+                                for (let i = 0; i < 6; i++) {
+                                  color += caracteres[Math.floor(Math.random() * 16)];
+                                }
+                                return color;
+                              }
+                            
+                            
+                            
+                            function generarCuadrados()
+                            {
+                                const cantidadDeCubos=prompt("Ingresa la cantidad de cubos:");
+                            
+                                let contador=0;
+                                while(cantidadDeCubos>contador)
+                                {   const newDiv=document.createElement("div");
+                                    newDiv.style.height="100px";
+                                    newDiv.style.width="100px";
+                                    newDiv.style.backgroundColor=colorAleatorioHex();
+                            
+                                    document.querySelector("body").appendChild(newDiv);
+                            
+                                    contador++;
+                                }
+                            }</code></pre>
+
+            </section>
+            <h2>Juego 3</h2>
+            <p>Pídele al usuario que elija una opción entre “piedra”, “papel” o “tijera” utilizando prompt().
+                Genera una elección aleatoria para la computadora entre las opciones “piedra”, “papel” y “tijera”. 
+                Para esto, debes pedirle a la IA que te ayude a escribir una función que te genere un número aleatorio.
+                Compara la elección del usuario y la de la computadora para determinar el resultado:
+                Piedra vence a tijera
+                Tijera vence a papel
+                Papel vence a piedra
+                Informa al usuario si ganó, perdió o fue un empate con un mensaje claro en la consola o en una alerta.
+            </p>
+            <section>
+               
+                <div class="code-container">
+                    <pre><button class="copy-button">Copy</button>
+                        <code>
+                            function elegirOpcionAleatoria() {
+                                const opciones = ["piedra", "papel", "tijera"];
+                                const indiceAleatorio = Math.floor(Math.random() * opciones.length);
+                                return opciones[indiceAleatorio];
+                              }
+                            
+                            
+                             function evaluacion(eleccion,opcion)
+                             {
+                                //piedra
+                                if(eleccion=="piedra"&& opcion=="tijera")return eleccion+" vence a "+opcion +"  Ganaste";
+                                if(eleccion=="piedra"&& opcion=="papel")return opcion+" vence a "+ eleccion+"  Perdiste";
+                                //papel
+                                if(eleccion=="papel"&& opcion=="tijera")return opcion+" vence a "+ eleccion+" Perdiste";
+                                if(eleccion=="papel"&& opcion=="piedra")return eleccion+" vence a "+opcion +"  Ganaste";
+                                //tijera
+                                if(eleccion=="tijera" && opcion=="papel") return eleccion+" vence a "+opcion +"  Ganaste";
+                                if(eleccion=="tijera" && opcion=="piedra") return opcion+" vence a "+ eleccion+"  Perdiste";
+                                if(eleccion==opcion) return "Empate el rival eligio: "+opcion;
+                            
+                             } 
+                            
+                            function generadorDeFiugrasDeManos()
+                            {
+                                const eleccion=prompt("Ingrese su eleccion (piedra, papel, tijera)")
+                            
+                                
+                               const respuesta= evaluacion(eleccion,elegirOpcionAleatoria());
+                            
+                               alert(respuesta);
+                                
+                            
+                            
+                            }</code></pre>
+
+            </section>
+            
+            <h2>Juego 4</h2>
+            <p>Calculadora de Edad
+                
+                
+               <li>Reciba el año de nacimiento de una persona</li> 
+                <li>Calcule y devuelva su edad actual</li>
+                <li>Muestre en consola: "Tienes X años"</li>
+                <p>Ejemplo: calcularEdad(1990) // Debería mostrar "Tienes 34 años"</p>
+            </p>
+            <section>
+               
+                <div class="code-container">
+                    <pre><button class="copy-button">Copy</button>
+                        <code>
+                            function ej4()
+                            {
+                                const añoIngresado=Number(prompt("Ingrese su año de nacimiento de una persona"));
+                                const añoActual=new Date().getFullYear();
+                                const edad=añoActual-añoIngresado;
+                                alert("Tienes "+edad+" años");
+                            }</code></pre>
+
+            </section>
+
+
+            <h2>Juego 5</h2>
+            <p>Conversor Celsius a Fahrenheit Crea una función que:
+
+<li>Reciba una temperatura en Celsius</li>
+<li>La convierta a Fahrenheit usando la fórmula: (C × 9/5) + 32</li>
+<li>Retorne el resultado con un mensaje</li>
+<p>Ejemplo: convertirAFahrenheit(30) // Debería mostrar "30°C son 86°F"</p>
+            </p>
+            <section>
+               
+                <div class="code-container">
+                    <pre><button class="copy-button">Copy</button>
+                        <code>
+                            function ej5()
+                            {   const celsiusIngresada=Number(prompt("Ingrese la temperatura en Celsius"));
+                                const respuestaFahrenheit=(celsiusIngresada * 9/5) + 32;
+                                alert(celsiusIngresada+"°C son "+respuestaFahrenheit+"°F");
+                            }</code></pre>
+
+            </section>
+            <h2>Juego 6</h2>
+            <p>Contador de Vocales
+Contador de Vocales Crea una función que:
+
+<li>Reciba una palabra</li>
+<li>Cuente cuántas vocales tiene (a,e,i,o,u)</li>
+<li>Retorne el número de vocales</li>
+
+<p>Ejemplo: contarVocales("Hola Mundo") // Debería retornar 4</p>
+
+
+            </p>
+            <section>
+               
+                <div class="code-container">
+                    <pre><button class="copy-button">Copy</button>
+                        <code>
+                            function ej3()
+                            {
+                              let palabraIngresada=prompt("Ingrese palabra");
+                              let caracter=[]
+                            
+                              let contadorletras=0;
+                              let contador=0;
+                                while(contador&lt;palabraIngresada.length)
+                                {
+                            
+                                  caracter[contador]= palabraIngresada.charAt(contador);
+                                 
+                                  contador++;
+                                }
+                                for(caracteres of caracter)
+                                { if(caracteres==='a'|| caracteres==='o'|| caracteres==='e'||caracteres==='i'||caracteres==='u')contadorletras++;
+                                  
+                                }
+                                alert(contadorletras);                           
+                             
+                            }</code></pre>
+
+            </section>
+            <h2>Juego 7</h2>
+            <p>Tabla de Multiplicar Crea una función que:
+
+<li>Reciba un número</li>
+<li>Genere su tabla de multiplicar del 1 al 10</li>
+<li>Muestre cada multiplicación en consola</li>
+
+
+<p>Ejemplo: tablaDeMultiplicar(5) Debería mostrar: 5 x 1 = 5 5 x 2 = 10 ...y así hasta el 10</p>
+            </p>
+            <section>
+               
+                <div class="code-container">
+                    <pre><button class="copy-button">Copy</button>
+                        <code>
+                            /* EJERCICIO 7 */
+
+                            function eje4()
+                            {
+                              let contador=1;
+                              let numero=prompt("Ingrese numero:");
+                              let string="";
+                              let respuesta=0;
+                              while(contador<=10)
+                              { 
+                                respuesta=numero*contador;
+                                string+="\nDebería mostrar: "+numero+" x" +contador+ "= "+respuesta;
+                               
+                                contador++;
+                              }
+                              alert(string);
+                            
+                            
+                            } </code></pre>
+
+            </section>
+
+        </div>
+
+    </main>
+    <footer></footer>
+
+
 
     <script src="./app.js"></script>
 </body>

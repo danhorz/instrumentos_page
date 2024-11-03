@@ -90,3 +90,66 @@ function generadorDeFiugrasDeManos()
 
 
 }
+/* Ejercicio 4 */
+
+/* EJERCICIO 4 */
+function ej1()
+{
+
+  const añoIngresado=Number(prompt("Ingrese su año de nacimiento de una persona"));
+  const añoActual=new Date().getFullYear();
+  const edad=añoActual-añoIngresado;
+  alert("Tienes "+edad+" años");
+}
+
+/* EJERCICIO 5 */
+function ej2()
+{
+  const celsiusIngresada=Number(prompt("Ingrese la temperatura en Celsius"));
+  const respuestaFahrenheit=(celsiusIngresada * 9/5) + 32;
+  alert(celsiusIngresada+"°C son "+respuestaFahrenheit+"°F");
+}
+
+/* EJERCICIO 6 */
+function ej3()
+{
+  let palabraIngresada=prompt("Ingrese palabra");
+  let caracter=[]
+
+  let contadorletras=0;
+  let contador=0;
+    while(contador<palabraIngresada.length)
+    {
+
+      caracter[contador]= palabraIngresada.charAt(contador);
+     
+      contador++;
+    }
+    for(caracteres of caracter)
+    { if(caracteres==='a'|| caracteres==='o'|| caracteres==='e'||caracteres==='i'||caracteres==='u')contadorletras++;
+      
+    }
+    alert(contadorletras);
+
+ 
+}
+
+/* EJERCICIO 7 */
+
+function eje4()
+{
+  let contador=1;
+  let numero=prompt("Ingrese numero:");
+  let string="";
+  let respuesta=0;
+  while(contador<=10)
+  { 
+    respuesta=numero*contador;
+    string+="\nDebería mostrar: "+numero+" x" +contador+ "= "+respuesta;
+   
+    contador++;
+  }
+  alert(string);
+
+
+}
