@@ -1,19 +1,28 @@
 
+let gameArea=document.getElementById("game-area");
+//se crea el ul
+let ul=document.createElement("ul");
 //Eje1
 function registroDeHermanos()
 {
-    const cantidadDeHermanos=prompt("Ingrese la cantidad de hermanos:")
+    const cantidadDeHermanos=prompt("Ingrese la cantidad de hermanos:");
 
     const listaHermanos=[];
     let contador=0;
     while(cantidadDeHermanos>contador)
     {   let nombreDeHermano= prompt("Ingresa el hermano"+contador);
         listaHermanos.push(nombreDeHermano);
+        //se ccrea el li
+        let li=document.createElement("li");
+        // se agrega a ul
+        ul.appendChild(li);
+        //se añade texto al li
+        li.textContent=nombreDeHermano;
         contador++;
     }   
     for(list of listaHermanos)
-    {
-        console.log(list);
+    { // se agrega ul a game area
+      gameArea.appendChild(ul);
     }
 }
 
@@ -27,13 +36,26 @@ function colorAleatorioHex() {
     }
     return color;
   }
+  function borrar(newDiv)
+  {
+    gameArea.innerHTML="";
+  }
 
 
 
 function generarCuadrados()
-{
-    const cantidadDeCubos=prompt("Ingresa la cantidad de cubos:");
+{  
+  /* creacion botn */
+  const crearBoton=document.createElement("button");
+  crearBoton.textContent="borrar";
+  gameArea.appendChild(crearBoton);
+  
 
+ 
+
+
+    const cantidadDeCubos=prompt("Ingresa la cantidad de cubos:");
+  let temp;
     let contador=0;
     while(cantidadDeCubos>contador)
     {   const newDiv=document.createElement("div");
@@ -41,10 +63,15 @@ function generarCuadrados()
         newDiv.style.width="100px";
         newDiv.style.backgroundColor=colorAleatorioHex();
 
-        document.querySelector("body").appendChild(newDiv);
-
+        document.querySelector("#game-area").appendChild(newDiv);
+        temp=newDiv;
         contador++;
+
     }
+    /* Las funciones vacias se usan para instanciar una funcion */
+    crearBoton.addEventListener('click',function (){
+      borrar(temp);
+    });
 }
 
 //Eje 3
@@ -85,7 +112,12 @@ function generadorDeFiugrasDeManos()
     
    const respuesta= evaluacion(eleccion,elegirOpcionAleatoria());
 
-   alert(respuesta);
+  const parrafo=document.createElement("p");
+  gameArea.appendChild(parrafo)
+  parrafo.textContent=respuesta;
+
+  // gameArea.textContent=respuesta;
+ 
     
 
 
